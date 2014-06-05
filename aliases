@@ -1,0 +1,27 @@
+#Git Commands
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gl='git log --oneline --all --graph --decorate'
+alias gaa='git add .'
+alias gfp='git ftp push'
+alias gpsh='git push'
+alias gpll='git pull'
+alias gtracked='git ls-tree -r master --name-only'
+
+alias repPer='sudo diskutil repairPermissions /'
+alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"';
+
+function take {
+	mkdir -p $1
+	cd $1
+}
+
+function google () {
+  lynx "google.com/search?q=$1"
+}
+
+function server() {
+    local port="${1:-8000}"
+    open "http://localhost:${port}/" && python -m SimpleHTTPServer "$port"
+}
